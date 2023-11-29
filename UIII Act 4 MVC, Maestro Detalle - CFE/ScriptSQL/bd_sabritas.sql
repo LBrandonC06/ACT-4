@@ -1,7 +1,7 @@
 -- phpMyAdmin SQL Dump
 -- version 4.7.4
 -- https://www.phpmyadmin.net/
---
+-- 
 -- Servidor: 127.0.0.1
 -- Tiempo de generación: 29-11-2023 a las 21:27:56
 -- Versión del servidor: 10.1.28-MariaDB
