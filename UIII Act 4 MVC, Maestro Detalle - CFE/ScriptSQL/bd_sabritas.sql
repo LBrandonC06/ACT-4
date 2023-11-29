@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-11-2023 a las 13:44:54
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.2.0
+-- Tiempo de generación: 29-11-2023 a las 21:27:56
+-- Versión del servidor: 10.1.28-MariaDB
+-- Versión de PHP: 5.6.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -20,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bd_sabritas`
 --
-CREATE DATABASE IF NOT EXISTS `bd_sabritas` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
-USE `bd_sabritas`;
 
 -- --------------------------------------------------------
 
@@ -30,17 +29,23 @@ USE `bd_sabritas`;
 --
 
 CREATE TABLE `productos` (
-  `idProducto` int(11) NOT NULL,
-  `MarcProducto` varchar(50) NOT NULL,
-  `NomProducto` varchar(100) NOT NULL,
-  `PrecioProducto` decimal(10,2) NOT NULL,
-  `cant_Producto` int(11) NOT NULL,
-  `info_Nutrimental` varchar(500) NOT NULL,
-  `Porcion_Producto` varchar(100) NOT NULL,
-  `Sellos` varchar(200) NOT NULL,
-  `Ingredientes` varchar(200) NOT NULL,
+  `id_Medidor` int(11) NOT NULL,
+  `CodigoPostal` varchar(50) NOT NULL,
+  `Colonia` varchar(100) NOT NULL,
+  `Calle` varchar(100) NOT NULL,
+  `N_Ext` int(11) NOT NULL,
+  `N_Int` varchar(500) NOT NULL,
+  `Nombre` varchar(100) NOT NULL,
+  `Telefono` varchar(200) NOT NULL,
   `id_Vendedor` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`id_Medidor`, `CodigoPostal`, `Colonia`, `Calle`, `N_Ext`, `N_Int`, `Nombre`, `Telefono`, `id_Vendedor`) VALUES
+(123, 'a1', 'a1', '100', 20, 'a1', 'Josue', '6594156', 123);
 
 -- --------------------------------------------------------
 
@@ -49,16 +54,23 @@ CREATE TABLE `productos` (
 --
 
 CREATE TABLE `vendedores` (
-  `id_Vendedor` int(11) NOT NULL,
-  `Nombre` varchar(50) NOT NULL,
-  `Apellidos` varchar(100) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `contacto` varchar(50) NOT NULL,
-  `RFC` varchar(13) NOT NULL,
-  `Genero` varchar(50) NOT NULL,
-  `Domicilio` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `Id_Tarifa` int(11) NOT NULL,
+  `Dueno` varchar(50) NOT NULL,
+  `Energia` varchar(100) NOT NULL,
+  `Iva` varchar(50) NOT NULL,
+  `Fac_Periodo` varchar(50) NOT NULL,
+  `DAP` varchar(13) NOT NULL,
+  `Adeudo` varchar(50) NOT NULL,
+  `Total` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `vendedores`
+--
+
+INSERT INTO `vendedores` (`Id_Tarifa`, `Dueno`, `Energia`, `Iva`, `Fac_Periodo`, `DAP`, `Adeudo`, `Total`) VALUES
+(1234, 'Brandon', '200', '60', '0.00', '40.00', '0.00', '300.00');
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
