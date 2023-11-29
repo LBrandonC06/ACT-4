@@ -4,7 +4,7 @@
 -- 
 -- Servidor: 127.0.0.1
 -- Tiempo de generación: 29-11-2023 a las 21:27:56
--- Versión del servidor: 10.1.28-MariaDB
+-- Versión del servidor: 10. 1.28-MariaDB
 -- Versión de PHP: 5.6.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
